@@ -622,3 +622,11 @@ O font-size nos ajuda a mudar o tamanho do texto, existem algumas unidades de me
 font-style
 Usamos o font-style para tornar um texto itálico, na maioria das vezes você usará apenas o valor italic para ele, mas se precisar tirar o itálico de um texto você pode usar o valor normal.
 
+Adicionando as atualizações para o github
+$ cd dio
+
+$ git add .
+
+$ git commit -m "atualização"
+
+$ git push origin main
