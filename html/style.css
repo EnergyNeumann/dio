@@ -1,5 +1,8 @@
 body{
     background:#A63287;
+    font-family: Verdana, Arial; /* caso a verdana n funcione, a arial entra */
+    max-width: 900px;
+    margin: auto;
 }
 
 .photo{
@@ -8,9 +11,18 @@ body{
 }
 
 #title, .subtitle, .post_title{
-    color:#F24484;
+    color:#ff75a8;
 }
 
+#title{
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+a{
+    text-decoration: line-through; /* linha ao centro */
+    color: #F24484;
+}
 .post_title{
     font-size: 16px;
     font-style: italic;
@@ -29,8 +41,24 @@ body{
 .post_content{
     margin: 0;
     margin-bottom: 15px;
+    text-transform: capitalize; /* primeiras letras ficam maiusculo */
+    text-align: justify;
+    padding-left: 2px;
 }
 
 .post_image{
     margin-bottom: 15px;   
+    width: 400px;
+}
+
+.contact_list{
+    list-style-type: circle;
+    padding-left: 30px;
+    color: white;
+}
+
+.contact_list li a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #ffb3cf;
 }
