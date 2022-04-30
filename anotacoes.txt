@@ -1,0 +1,416 @@
+Parte 1 - lógica
+Abstração é a habilidade de concentrar nos aspectos essenciais
+de um contexto qualquer, ignorando as caracteristicas
+menos importantes ou acidentais
+
+Algoritmo é uma sequencia de passos que resolve um problema
+
+Pseucodigo é uma forma generica de escrever um algoritmo,
+utilizando uma linguagem simples (nativa)
+
+Fluxograma é uma ferramente utilizada para representar graficamente
+o algoritmo, isto é, a sequencia logica e coerente do fluxo de dados
+
+Uma variavel é um espaço na memoria do computador destinado a um dado
+que é alterado durante a execução do algoritmo
+
+Concatenação é um termo usado em computação para designar a operação
+de unir o conteúdo de duas strings
+*string é um sequencia de caracteres
+
+Linguagem de programação é uma linguagem escrita e formal que especifica
+um conjunto de instruções e regras usadas para gerar programas (softwares).  
+Um software pode ser desenvolvido para rodar em um computador, dispositivo movel ou em qualquer
+equipamento que permita sua execução.
+
+Portugol é uma pseudolinguagem que permite ao leitor desenvolver
+algoritmos estruturados em portugues de forma simples e intuitiva
+independente da linguagem de programação.
+
+Uma matriz é uma coleção de variaveis de mesmo tipo, acessiveis
+com um unico nome e  armazenados contiguamente na memoria.
+a individualização de cada variavel de um vetor é feita atraves
+de uso de indices.
+
+Vetores são matrizes de uma só dimensão
+
+
+
+Parte 2 - Git
+Núcleo do sistema operacional é cheio de codigos
+
+cmd - terminal:
+Comando para mostrar quais pastas tem 
+Windows: dir
+Linux: ls
+
+Possibilita que navegue pelas pastas
+Windows: cd / ou cd Windows
+Linux: cd / ou cd etc
+
+para voltar
+Windows: cd ..
+Linux: cd ..
+
+Para limpar a tela do cmd
+Windows: cls
+Linux: clear ou crtl+l
+
+Para criar uma pasta
+Windows: mkdir (nome da pasta)
+Linux: sudo (pegar permissão para dps criar pasta) - mkdir (nome da pasta)
+
+Criar arquivo
+Windows: echo hello > hello.txt
+Linux: echo hello > hello.txt
+
+Deletar arquivos que tao dentro da pasta
+Windows: del (nome da pasta)
+Linux: 
+
+Deletar a pasta
+Windows: rmdir (nome da pasta) /S /Q
+Linux: rm -rf (nome da pasta)
+o /S /Q é para não pedir confirmação se quer ou não deletar
+o -rf é para não pedir confirmação se quer ou não deletar
+
+Olhar os comandos que já fez
+Windows: seta para cima (igual transformice)
+Linux:
+
+
+
+Como o git funciona?
+SHA1:
+é um algoritmo de criptação. pegará seu arquivo e embaralhara ele
+de uma forma bem especifica.
+assim, esses dados encriptados vão gerar um conjunto de caracteres
+de 40 digitos, o deixando unico, como uma forma de identificação.
+
+echo 'conteudo' | git hash-object --stdin
+echo -e 'conteudo' | openss1 sha1
+
+
+Objetos internos do git:
+BLOBS, TREES E COMMITS
+
+Blobs: terá metadados da qual poderá ser usado para abrir o
+sha1 identificado
+echo -e 'blob 9/0conteudo' | openss1 sha1
+
+
+Trees: armazenam blobs, ela contém metadados, da qual apontam 
+para blobs que tem sha1 e ela guarda nome de arquivos
+blob - sa4d8s - texto.txt
+
+tree
+README  RAKEFILE  lib
+blob    blob      tree
+                  simplegit.rb
+                  blob
+
+
+Commit: aponta para a arvore, parente, mensagem, autor e timestamp
+tree - s4a5sq1
+parente - a98acq1
+autor - perkles
+mensagem - "inicia..."
+timestamp
+
+Ou seja, isso tudo é um sistema distribuido seguro, da qual
+guardara suas informações
+
+
+
+Chave SSH: é uma forma de estabelecer uma conexao segura e encriptada
+entre duas maquinas. tendo 2 chaves: publica e privada
+settings - SSH and GPG keys
+
+Entrar git e codigo para gerar a chave:
+Otavio@perkles-desktop MINGW64 ~
+$ ssh-keygen -t ed25519 -c email        (o ed25519 é o tipo de criptografia da chave)
+dar enter, e colocar uma senha
+chave gerada :)
+
+Comando para entrar na pasta:
+$ cd /c/Users/Lucas/.ssh/ 
+
+Comando para listar:
+$ ls 
+
+Comando para visualizar o conteudo de uma das chaves:
+$ cat id_ed25519.pub
+*sempre expor no github, a chave publica*
+copiar a chave publica, e colocar la no key das settings - SSH and GPG keys
+em title, colocar uma apelido para a chave
+
+
+Comando para inicializar o SSH agent (entidade que vai pegar as chaves e usa-las)
+$ eval $(ssh-agent -s)
+
+Pegar as chaves:
+$ ls
+
+Adicionar à chave:
+$ ssh-add id_ed25519 
+*sempre passar para o agente, a chave privada da qual ele descriptografará a msg
+colocar a senha que tu digitou pra chave
+
+
+Para clonar:
+$git clone e o caminho ssh (git@github.com:Perkles/perkles.github.io.git
+yes
+
+Dar $ls e ver se criou ou não o repositório clonado
+
+
+
+Criando um commit:
+Primeiro, criar um repositório:
+$ ls
+
+$ cd workspace/
+
+$ mkdir livro-receitas
+
+$ ls
+
+$ cd livro-receitas/
+
+Para inicializar e possiblitar que o git comece a usar o codigo:
+$ git init
+
+$ ls
+*Não aparecerá nada, pois a .git é oculta
+
+Ver arquivos ocultos:
+$ ls -a
+
+$ cd .git/
+
+$ ls
+
+$ cd.. (para voltar para pasta receitas) (voltar 1 nivel)
+
+$ git config --global user.email "otaviocha@gmail.com"
+
+$ git config --global user.name Perkles
+
+
+Criar arquivo na pasta, com extensao markdown (que é um bloco de notas
+que poderá usar negrito, italico, tamanho e etc
+exemplo: strogonoff.md
+Abrir arquivo (mas só abre no typora, que é pago) (ou usar algum pirata)
+escrever:
+#Strogonoff de frango       (o # é tipo um <h1>)
+##Strogonoff de carne
+###Strogonoff de peixe
+
+
+Commitando o arquivo:
+$ git add *
+
+$ git commit -m "commit inicial"
+
+
+
+O git tem a versão do servidor, e da sua maquina. 
+Servidor - remote repository
+Ambiente de desenvolvimento:
+Working directory
+Staging area (area de backstage, onde vc altera e cuida das coisas)
+Local repository
+
+$ ls
+
+Para saber os status do arquivo, você usa o:
+$ git status
+
+$ mkdir receitas
+
+$ ls
+
+Mover para pasta:
+$ mv strogonoff.md ./receitas/
+
+$ ls
+
+$ cd receitas/
+
+$ ls
+
+$ cd..
+
+$ ls
+
+$ git status
+
+$ git add strogonoff.md receitas/
+
+$ git status
+
+$ git commit -m "cria pasta receitas, move arquivo para receitas"
+
+$ git status
+
+$ ls
+
+$ echo > README.md
+
+$ ls
+
+$ git status
+
+$ git add * (o * pega tudo listado)
+
+$ git status
+
+$git commit -m "adiciona index"
+
+O $ git add, sempre pega o arquivo untracked e move para stage
+
+
+
+Colocando arquivos no diretório do github:
+Ver as configurações do git:
+$ git config --list
+
+$ git config --global user.email "meuemail"
+
+$ git config --global user.name "meunome"
+
+$ git remote add origin linkdogithub
+
+Ver:
+$ git remote -v
+
+Empurrar arquivo pro Github:
+$ git push origin master
+
+Puxar arquivo do github pra maquina
+$ git pull origin master 
+(as vezes da erro, ent vc tem que ir alterar o caracter necessario)
+
+
+
+Parte 3:
+Processo de desenvolvimento:
+-concepção
+-analise e design
+-desenvolvimento
+-testes
+-implantação
+
+Gestão de projetos:
+Projeto tradicional: só permite que o projeto avance quando 
+uma fase está inteiramente completa
+Ágil: software construido por parte (incremental) e cada parte executa-se em um
+ciclo (iterativo)
+
+Tradicional:
+-Escopo definido na fase inicial do projeto (preditivo)
+-projeto é controlado por fases e marcos
+-cliente só ve o software funcionando na fase final do projeto
+-resitencia a mudanças
+
+Ágil:
+-Escopo definido ao longo do projeto (adaptativo)
+-projeto é controlado por funcionalidade entregues
+-cliente pode ver parte do software funcionando na parte inicial do projeto
+-mudanças constantes de acordo com o feedback do usuario
+
+Com SCRUM vc descobre o erro em no máximo de 30 dias,
+já tradicional, só no final
+
+O que é ser ágil?
+-rapidez na mudança e desembaraço
+-fazer coisas complexas de forma simples
+-equipe comprometida com os objetivos
+-maior valor para o cliente
+
+SCRUM 
+-é um dos frameworks de gerenciamento de projetos ageis
+=é um projeto usando equipes pequenas e multidisciplinares
+produzindo os melhores resultados
+-conversar mais e escrever menos
+-demonstrar o software constantemente aos usuarios e obter
+feedbacks constantes
+-requisitos mudam ao longo do tempo
+-aprender progressivamente com o uso do software 
+
+Razões para adotar o SCRUM
+-desenvolvido e entregue em partes menores (2 a 4 semanas) com
+constante feedback ao usuarios
+-melhor gerenciamento de riscos (redução de incertezas)
+-comprometimento, motivação e transparencia da equipe (daily meeting)
+-maior valor para o negocio (priorização do backlog)
+-usuarios envolvidos durante todo o ciclo
+-aplicação das lições aprendidas (melhoria continua)
+
+Caracteristicas do time SCRUM
+-equipes capazes de se auto-organizarem
+-as tarefas são do time e todos são responsaveis
+-forte comprometimento com o resultados
+
+Por que as startups utilizam framework ágil?
+-pois usam o minimo produto viavel, para assim, ir evoluindo
+o produto (exemplo: ifood)
+
+
+Papéis e responsabilidades do time scrum
+-product owner (po)
+-scrum master (sm)
+-time de desenvolvimento (dev)
+
+Product owner:
+-representante da area de negocios
+-PO não é um comite
+-define as funcionalidades do software (product backlog)
+-prioriza as funcionalidades de acordo com o valor do negocio
+-garante que o time de desenvolvimento entenda os itens do
+backlog no nivel necessario
+
+SCRUM master:
+-garantir o uso correto do SCRUM
+-scrum master não é o gerente de projetos
+-age como facilitador
+-auxilia o product owner no planejamento e estimativas do
+backlog
+-auxilia a equipe a remover impedimentos
+-treina o time em autogerenciamento e interdisciplinaridade
+
+Time de desenvolvimento
+-possui habilidades suficientes para desenvolver, testar, criar
+e desenhar, ou seja, tudo que for necessario para entregar
+o software funcionando
+
+
+Sprint: corrita e arrancada
+-é o principal evento do scrum e dura 30 dias
+
+Composição da sprint
+-planejamento da sprint
+-reuniao diaria
+-revisao da sprint
+-retrospectiva da sprint
+
+Planning poker
+-cada um opina uma estimativa/esforço para cada tarefa
+
+Revisão da sprint
+-tive dev apresenta para o PO o trabalho feito
+
+Restropectiva da sprint
+-reunião da equipe para lições aprendidas
+
+
+
+Parte 4:
+
+
+
+
+
+
+
+
