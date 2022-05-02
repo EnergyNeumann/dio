@@ -630,3 +630,28 @@ $ git add .
 $ git commit -m "atualização"
 
 $ git push origin main
+
+
+Parte 5
+Bootstrap:
+Se trata de um framework para desenvolvimento de sites que
+você consegue usar no cell, not e tablet, da qual o site
+n perde a forma.
+
+Possui uma vasta biblioteca de componentes que facilita a agilização do desenvol
+vimento de paginas web
+
+É um dos frameworks mais usados e conhecidos do front-end
+
+-Baixar bootstrap
+-extrar pasta
+
+Nesse site bootstrap, se vc for para documention (docs)
+será possivel obter componentes já prontos para o site
+isto se, você linkar sua pagina com o href da pasta css bootstrap.
+
+Pexels: repositório de img gratuito
+
+col-lg-4 - tem que completar 12, ent, se forem 3 imagens, é 4, pois 4x3 é 12
+já, se fossem 2, seria col-lg-6
+já, se fosse 4, seria col-lg-3
