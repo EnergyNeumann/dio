@@ -1,0 +1,104 @@
+:root{ /* declarar variavel dentro do css */
+    --vermelho: #E50914; /* cores principais do site */
+    --preta: #141414;
+}
+
+*{ /* reset */
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box; /* ngm vai ultrapassar a borda da caixa */
+}
+
+/*elementos base*/
+
+body{
+    background: var(--preta);
+    font-family: 'Arial', Times, serif;
+    color: white;
+}
+
+header .container{
+    display: flex; /* utiliza a flexbox para alinhar os elementos em tela*/
+    flex-direction: row; /* msm se n colocasse ela, ela ia vir do msm jeito */
+    align-items: center;
+    justify-content: space-between; /* espaço entre o h2 FLIX-chan*/
+}
+
+header .logo{
+    margin-left: 5px;
+    color: var(--vermelho);
+    font-family: 'Arial Black', Times;
+    font-size: 40px;
+}
+
+header nav a{
+    text-decoration: none;
+    color: #AAA;
+    margin-right: 10px;
+}
+
+header nav a:hover{
+    color: #fff;
+}
+
+/*anime principal*/
+
+.anime-principal{
+    font-size: 16px;
+    height: 500px;
+    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)), url(../imagem/bannerbunny.jpg); /* usa o gradient para criar uma outra tonalidade para img*/
+    background-size: cover; /* pegar area de cobertura da caixa */
+    display: flex; /* joga tudo em linha*/
+    flex-direction: column; /*joga tudo em coluna*/
+    justify-content: center;
+    align-items: flex-start; /* os elementos começam na esquerda*/
+}
+
+.anime-principal .descricao{
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.anime-principal .titulo{
+    margin-top: 15%; /* sempre bom usar porcentagem, pois isso altera no mobile e deixa ideal */
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.botao{
+    background-color: rgba(0,0,0,.50);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    margin-right: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 1s ease all; /*cuida da parte da transição entre uma animação e outra */
+}
+
+.botao:hover{
+    background-color: white;
+    color: black;
+}
+
+.botao i{
+    margin-right: 8px;
+}
+
+.container{
+    margin-left: 30px;
+}
+
+.anime-principal .container{
+    width: 70%;
+}
+
+.box-anime{
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.carrosel-animes{
+    margin-top: 5px;
+}

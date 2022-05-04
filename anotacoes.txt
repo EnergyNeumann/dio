@@ -655,3 +655,16 @@ Pexels: repositório de img gratuito
 col-lg-4 - tem que completar 12, ent, se forem 3 imagens, é 4, pois 4x3 é 12
 já, se fossem 2, seria col-lg-6
 já, se fosse 4, seria col-lg-3
+
+
+NETFLIX
+site de pegar fontes: google fonts
+
+site para pegar filmes/sinopse: themoviedb
+
+../ serve para pegar um arquivo de dois diretorios atras do atual, ou um diretorio atras
+
+font awesome: script que você incorpora no seu html para pegar icones
+
+site/ferramenta para pegar itens: owl carousel 2 (baixar arquivo)
+entrar na pasta, ir em docs, ir em assets e pegar oq quiser
