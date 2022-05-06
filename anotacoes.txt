@@ -668,3 +668,42 @@ font awesome: script que você incorpora no seu html para pegar icones
 
 site/ferramenta para pegar itens: owl carousel 2 (baixar arquivo)
 entrar na pasta, ir em docs, ir em assets e pegar oq quiser
+
+
+JavaScript:
+MAP
+-Tem as entradas no formato chave,valor, pode ser iterado por um loop for...of
+-Adicionar, ler e deletar: set, delete e get
+-const mymap = new map()
+-my map.set('apple','fruit')
+-chave = apple, valor = fruit
+Maps vs Objetos
+-Maps podem ter chaves de qualquer tipo (numeros, strings e etc)
+-Maps possuem a propriedade length (já tem o length pronto para ver o tamanho)
+-Maps são mais fáceis de iterar
+-Utilizado quando o valor das chaves é desconhecido
+-Os valores tem o mesmo tipo
+
+Set
+-Sets são estruturas que armazenam valors únicos (que n se repetem nunca)
+-Adicionar, consultar e deletar:
+const myset = new set();
+myset.add(1);
+myset.has(1);
+myset.delete(1);
+Set vs Array
+-Possui valores únicos
+-Em vez da propriedade length, consulta-se o número de registros pela size
+-Não possui os métodos map, filter, reduce e etc
+
+Criando função que retorna o nome dos membros de um map que tem o papel ADMIN no sistema
+1) Crie uma função getAdmin que recebe um Map
+2) Crie um map e popule-o com nomes de usuários e seus papéis no sistema (ex: luis == Admin)
+3) Dentro de getAdmin, utilize o loop for..of para retornar uma lista com os nomes dos usuarios que são adm
+(As resoluções estão no visual studio)
+Abrir terminar, ir em new terminal e dar node nomedoarquivo
+Ou usar o node.js com o coderunner
+
+Set
+1) Dado o array: [30,30,40,5,223,2049,3034,5], retorne outro array apenas com valores únicos
+(As resoluções estão no visual studio)
