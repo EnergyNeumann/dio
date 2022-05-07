@@ -707,3 +707,64 @@ Ou usar o node.js com o coderunner
 Set
 1) Dado o array: [30,30,40,5,223,2049,3034,5], retorne outro array apenas com valores únicos
 (As resoluções estão no visual studio)
+
+
+
+Error
+-Error ECMAScript: quando o codigo n ta rodando, ele fala oq aconteceu
+e etc, q é aquele uncaught referenceerror: 
+-composto por: mensagem, nome, linha e call stack
+
+-DOMEException: erros relacionados ao codigo que foi rodado na pagina
+web. 
+
+
+Tratando o erro: 
+-Throw: retorna o erro 
+function verificaPalindromo(string){
+    if (!string) throw "String invalida";
+
+    return string === string.split('').reverse().join('');
+}
+verificaPalindromo('cat');
+
+-Try...catch: diz o erro pela função cat
+function tryCatchExemplo(string){
+  try{
+    return verificaPalindromo(string)
+  }
+  catch(e){
+   console.log(e); ou throw e;
+  }
+}
+tryCatchExemplo('');
+
+-Finally: instrução que vai ser chamada mesmo se n tiver um erro
+function tryCatchExemplo(string){
+  try{
+    return verificaPalindromo(string)
+  }
+  catch(e){
+   console.log(e); ou throw e;
+  }
+  finally{
+   console.log('A string enviada foi: ' + string);
+  }
+}
+tryCatchExemplo('');
+
+
+Criando erros
+-new Error(message, fileName, lineNumber)
+const MeuErro = new Error('Mensagem Inválida');
+throw MeuErro;
+
+-Ou com nome:
+const MeuErro = new Error('Mensagem Inválida');
+MeuErro.name = 'InvalidMessage';
+throw MeuErro;
+
+MeuErro.stack = onde foi executado/encontrado o erro
+
+
+
